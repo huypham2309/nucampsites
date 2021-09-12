@@ -121,30 +121,30 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title">Login</h3>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button class="close" type="button" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <label for="loginEmail" class="sr-only">Email Address</label>
                                     <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
                                 </div>
                                 <div class="form-group col-12">
-                                    <label class="sr-only" for="loginPassword">Password</label>
-                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="password">
+                                    <label for="loginPassword" class="sr-only">Password</label>
+                                    <input type="password" id="loginPassword" class="form-control form-control-sm" placeholder="Enter Password">
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label" >Remember me</label>
+                                        <input type="checkbox" class="form-check-input">
+                                        <label for="" class="form-check-label">Remember Me</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary btn-sm ml-auto">Sign in</button> 
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                             </div>
                         </form>
                     </div>
@@ -192,6 +192,9 @@
                     <span class="carousel-control-prev-icon"></span>
                     <span class="sr-only">Next</span>
                 </a>
+                <button class="btn btn-danger btn-sm" id="carouselButton">
+                    <i class="fa fa-pause"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -276,6 +279,24 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                }else{
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause"); 
+                }
+            });
+        });
+
+    </script>
 
 </body>
 
