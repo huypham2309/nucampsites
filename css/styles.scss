@@ -14,17 +14,16 @@ body {
 
 h1, h2, h3 {
     font-family: $header-font;
-    font-weight: bold;
-    font-size: xx-large;
+}
+
+h2 {
+    color: $color-primary;
 }
 
 span.small{
     font-size: small;
 }
 
-h2 {
-    color: $color-primary;
-}
 
 header {
     h2 {
@@ -32,7 +31,7 @@ header {
     }
 }
 
-footer {
+.site-footer {
     background-image: linear-gradient($color-pale, white);
     padding: 20px 0;
 }
@@ -40,7 +39,7 @@ footer {
 .jumbotron {
     margin: 0;
     padding: 30px;
-    background-image: linear-gradient(to right, $color-secondary, $color-primary, color-dark);
+    background-image: linear-gradient(to right, $color-secondary, $color-primary, $color-dark);
     color: white;
 }
 
