@@ -13,6 +13,14 @@ span.small {
 header h2 {
   color: #CEC8FF; }
 
+#reserveModal .modal-header {
+  background-color: #17A2B8;
+  color: white; }
+
+#loginModal .modal-header {
+  background-color: #901CAD;
+  color: white; }
+
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
   padding: 20px 0; }
